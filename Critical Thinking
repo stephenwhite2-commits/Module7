@@ -26,6 +26,10 @@ meeting_times = {
   'NET110': '11:00 a.m.',
   'COM241': '1:00 p.m.'
 }
+# show a list of available courses to look up
+print("Courses this term:")
+for course in room_numbers:
+  print(f" - {course}")
 # Allow user to input a course number
 course_number = input("Enter a course number (e.g., CSC101): ").strip().upper()
 # Check if course number entered actually exists
