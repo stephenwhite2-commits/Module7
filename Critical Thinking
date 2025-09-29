@@ -26,13 +26,17 @@ meeting_times = {
   'NET110': '11:00 a.m.',
   'COM241': '1:00 p.m.'
 }
-# show a list of available courses to look up
-print("Courses this term:")
-for course in room_numbers:
-  print(f" - {course}")
-# Allow user to input a course number. Change to a loop.
 while True:
-  course_number = input("Enter a course number (e.g., CSC101): ").strip().upper()
+  # show a list of available courses to look up
+  print("Courses this term:")
+  for course in room_numbers:
+    print(f" - {course}")
+  # Allow user to input a course number. Change to a loop.
+  course_number = input("Enter a course number from the list above (or type 'quit' to quit): ").strip().upper()
+  # Check if the user wants to exit
+  if course_number == 'EXIT':
+    print("Goodbye!")
+    break
   # Check if course number entered actually exists
   if course_number in room_numbers:
     print(f"\nCourse Info for {course_number}:")
@@ -40,4 +44,4 @@ while True:
     print(f"Instructor: {instructors[course_number]}")
     print(f"Meeting Time: {meeting_times[course_number]}")
   else:
-    print("\nThat course number was not found. Please, try again. Use the list of courses provided above for reference.")
+    print("\nThat course number was not found. Please, try again. Use the list of courses provided for reference.")
